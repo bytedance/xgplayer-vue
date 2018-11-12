@@ -23,7 +23,9 @@ export default {
   props: {
     config: {
       type: Object,
-      default: { id: 'mse', url: '' }
+      default () {
+        return { id: 'mse', url: '' }
+      }
     },
     format: {
       type: String,
@@ -31,7 +33,9 @@ export default {
     },
     rootStyle: {
       type: Object,
-      default: {}
+      default () {
+        return {}
+      }
     }
   },
   methods: {
