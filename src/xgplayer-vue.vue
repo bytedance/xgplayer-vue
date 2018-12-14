@@ -74,6 +74,9 @@ export default {
   },
   beforeUpdate() {
     this.init();
+  },
+  beforeDestroy() {
+    this.player && typeof this.player.destroy === 'function' && this.player.destroy();
   }
 }
 </script>
