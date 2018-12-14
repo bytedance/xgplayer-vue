@@ -42,7 +42,7 @@ xgplayer-vue is the Vue component which encapsulating the xgplayer.
 
     Step 2. Use in template
     ```html
-    <Xgplayer :config="config" :format='format' @player="Player = $event"/>
+    <Xgplayer :config="config" @player="Player = $event"/>
     ```
 
     Step 3. Config for xgplayer
@@ -54,7 +54,6 @@ xgplayer-vue is the Vue component which encapsulating the xgplayer.
             id: 'vs',
             url: '/xgplayer-demo.mp4'
           },
-          format: 'mp4',
           Player: null
         }
       }
@@ -62,7 +61,7 @@ xgplayer-vue is the Vue component which encapsulating the xgplayer.
     ```
     You can use 'config' object to pre-config xgplayer, such as size, volume, autoplay and so on. [More config](http://h5player.bytedance.com/en/config/)
 
-    'format' is used to tell xgplayer which format video you want to play and which plugin you want to use. 'mp4', 'xg-mp4', 'hls', 'xg-hls', 'flv', 'xg-flv', 'dash' are supported. 'mp4' means play mp4 without using plugin; 'xg-mp4' means play mp4 with using [xgplayer-mp4 plugin](http://h5player.bytedance.com/plugins/#xgplayer-mp4); 'hls' means play hls(.m3u8) with using [xgplayer-hls.js plugin](http://h5player.bytedance.com/plugins/#xgplayer-hls.js); 'xg-hls' means play hls(.m3u8) with using [xgplayer-hls plugin](http://h5player.bytedance.com/plugins/#xgplayer-hls); 'flv' means play flv with using [xgplayer-flv.js plugin](http://h5player.bytedance.com/plugins/#xgplayer-flv.js); 'xg-flv' means play flv with using [xgplayer-flv plugin](http://h5player.bytedance.com/plugins/#xgplayer-flv); 'dash' means play MPEG-DASH(.mpd) with using [xgplayer-shaka plugin](http://h5player.bytedance.com/plugins/#xgplayer-shaka).
+    'mp4', 'hls', 'flv', 'dash' are supported to play and you should add the plugin you want to use. [Functional Plugins List](http://h5player.bytedance.com/en/plugins/#functional-plugins-list).
 
     'Player' is the xgplayer instance which exposed from the component. You can use 'Player' to access the API of xgplayer as follows.
 

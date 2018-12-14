@@ -1,6 +1,6 @@
 {
   "name": "xgplayer-vue",
-  "version": "1.1.2",
+  "version": "1.1.4-beta",
   "description": "Vue component for xgplayer, a HTML5 video player with a parser that saves traffic",
   "author": "zhangxin.frontend@bytedance.com",
   "license": "MIT",
@@ -9,14 +9,7 @@
   },
   "main": "./src/xgplayer-vue.vue",
   "dependencies": {
-    "xgplayer": "^1.1.2",
-    "xgplayer-flv": "^1.1.2",
-    "xgplayer-flv.js": "^1.1.2",
-    "xgplayer-hls": "^1.1.2",
-    "xgplayer-hls.js": "^1.1.2",
-    "xgplayer-mp4": "^1.1.2",
-    "xgplayer-music": "^1.1.2",
-    "xgplayer-shaka": "^1.1.2"
+    "xgplayer": "^1.1.3"
   },
   "devDependencies": {
     "@koa/cors": "^2.2.1",
