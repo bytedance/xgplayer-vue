@@ -1,5 +1,5 @@
 <template>
-  <div :id='config.id' :style='rootStyle'>
+  <div :id='config.id'>
   </div>
 </template>
 
@@ -19,28 +19,26 @@ export default {
       default () {
         return { id: 'mse', url: '' }
       }
-    },
-    rootStyle: {
-      type: Object,
-      default () {
-        return {}
-      }
     }
   },
   methods: {
     init() {
-      let self = this;
       if (this.config.url && this.config.url !== '') {
         this.player = new Player(this.config);
         this.$emit('player', this.player)
       }
     }
   },
-  mounted() {
-    this.init();
+  watch:{
+    config:{
+      handler: function () {
+        this.init();
+       },
+      deep: true
+    }
   },
-  beforeUpdate() {
-    this.init();
+  mounted() {
+   this.init();
   },
   beforeDestroy() {
     this.player && typeof this.player.destroy === 'function' && this.player.destroy();
