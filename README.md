@@ -42,7 +42,7 @@ xgplayer-vue is the Vue component which encapsulating the xgplayer.
 
     Step 2. Use in template
     ```html
-    <Xgplayer :config="config" @player="Player = $event"/>
+    <Xgplayer :config="config" @player="player"/>
     ```
 
     Step 3. Config for xgplayer
@@ -52,10 +52,20 @@ xgplayer-vue is the Vue component which encapsulating the xgplayer.
         return {
           config: {
             id: 'vs',
-            url: '/xgplayer-demo.mp4'
+            url: '//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4'
           },
           Player: null
         }
+      },
+      mounted(){
+        this.Player.on('ready', ()=>{ console.log('ready') });
+        this.Player.on('play', ()=>{ console.log('play') });
+        this.Player.on('timeupdate', (player)=>{ console.log(player.currentTime) });
+      },
+      methods: {
+        player(player){
+          this.Player = player;
+        },
       }
     }
     ```
