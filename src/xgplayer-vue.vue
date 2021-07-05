@@ -22,23 +22,13 @@ export default {
     }
   },
   methods: {
-    init() {
-      if (this.config.url && this.config.url !== '') {
-        this.player = new Player(this.config);
-        this.$emit('player', this.player)
-      }
-    }
-  },
-  watch:{
-    config:{
-      handler: function () {
-        this.init();
-       },
-      deep: true
+    initPlayer() {
+      this.player = new Player(this.config);
+      this.$emit('player', this.player);
     }
   },
   mounted() {
-   this.init();
+   this.initPlayer();
   },
   beforeDestroy() {
     this.player && typeof this.player.destroy === 'function' && this.player.destroy();
